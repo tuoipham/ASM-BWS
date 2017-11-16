@@ -1,0 +1,69 @@
+
+<fieldset ng-controller="registerController">
+    <legend>Member Register</legend>    
+    <span class="error-msg" id="total-msg"></span>
+    <form id="member-form" class="form-horizontal" name="myForm">
+        <div class="form-group">
+            <label class="control-label col-sm-2">Tài khoản:</label>
+            <div class="col-sm-8">          
+              <input type="text" class="form-control" placeholder="Enter acount" name="username" ng-model="username" required>
+              <span style="color:red" ng-show="myForm.fullname.$dirty && myForm.fullname.$invalid">
+              <span ng-show="myForm.fullname.$error.required">Vui lòng điền thông tin họ tên.</span>
+              </span>
+              </p>
+            </div>
+            <span class="glyphico"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Mật khẩu:</label>
+            <div class="col-sm-8">          
+              <input type="password" class="form-control" placeholder="Enter password" name="password" ng-model="sendData.data.attributes.password">
+            </div>
+            <span class="glyphicon glyphicon-ok"></span>          
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Nhắc lại mật khẩu:</label>
+            <div class="col-sm-8">          
+              <input type="password" class="form-control" placeholder="Repeat password" name="reppassword">
+            </div><span class="glyphicon glyphicon-ok"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Họ và tên:</label>
+            <div class="col-sm-8">          
+              <input type="text" class="form-control" placeholder="Họ và tên đầy đủ" name="fullName" ng-model="sendData.data.attributes.fullName">
+            </div><span class="glyphicon glyphicon-ok"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Email:</label>
+            <div class="col-sm-8">
+              <input type="email" class="form-control" placeholder="Enter email" name="email" ng-model="sendData.data.attributes.email">
+            </div><span class="glyphicon glyphicon-ok"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Ngày sinh:</label>
+            <div class="col-sm-8">
+              <input type="date" class="form-control" placeholder="dd/mm/yyyy" name="birthDay">
+            </div><span class="glyphicon glyphicon-ok"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Giới tính:</label>
+            <div class="col-sm-8">
+              <label class="radio-inline">
+                <input type="radio" name="optradio" checked="checked">Nam
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">Nữ
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">Khác
+              </label>                        
+            </div>
+        </div>
+        <div class="form-group">        
+          <div class="col-sm-offset-2 col-sm-8">
+            <button type="submit" class="btn btn-primary" id="bntSubmitmember">Submit</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+          </div>
+        </div>
+    </form>
+</fieldset>

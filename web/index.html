@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>Basic AngularJS</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>	
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body ng-controller="myController">
+	<header>
+		<div class="logo">
+			<a href="single-page-app.html">
+				<img src="img/youtube.png">
+			</a>
+		</div>
+		<div class="search-box" ng-submit="seach()">
+			Type and hit enter <input type="text" name="keyword" id="keyword">
+		</div>
+	</header>
+	<div id="myModal" class="modal" ng-show="isShowVideo">
+	  <span class="close" ng-click="closeVideo()">&times;</span>
+	  <iframe class="modal-content" id="video-frame" width="700" height="415" 
+		      	ng-src="{{mySrc}}" frameborder="0" allowfullscreen></iframe>
+	  <div id="caption"></div>
+	</div>	
+	<div id="list-video">
+		<div class="video" ng-repeat="video in listVideo" ng-click="showVideo(video.id.videoId)">
+			<img ng-src="{{video.snippet.thumbnails.medium.url}}">
+			<div class="title">{{video.snippet.title}}
+			</div>
+		</div>
+	</div>
+	<footer>
+		<span>Working with Youtube API - FPT Aptech &copy; 2017</span>
+	</footer>	
+</body>
+</html>

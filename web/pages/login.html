@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<style>
+form {
+    order: 150px solid #f1f1f1;
+    margin: 0 150px 0 180px;
+}
+
+input[type=text], input[type=password] {
+    width: 500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<body>
+<form action="/action_page.php" ng-controller="loginController" ng-app="myApp" name="login-form">
+  <div class="imgcontainer">
+    <img src="https://www.shareicon.net/data/2016/05/26/771190_people_512x512.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+  <div>
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="Username" ng-model="loginData.data.attributes.username" required >
+    <span style="color:red" ng-show="login-form.username.$touched && login-form.username.$invalid">
+    <span ng-show="login-form.username.$error.required">Username is required.</span>
+    </span>
+    </div>
+    <div>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" ng-model="loginData.data.attributes.password" required>
+        <span style="color: red" ng-show="login-form.password.$touched && login-form.password.$invalid"></span>
+    </div>
+    <div class="form-group">
+            <label>&nbsp;</label>
+            <input type="button" name="submit" value="Đăng nhập" 
+                 class="btn btn-primary" ng-click="handleLogin()">
+            <input type="reset" name="reset" value="Làm lại" class="btn btn-primary">
+        </div>
+  </div>
+</form>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('loginController', function($scope) {
+        $scope.loginData.data.attributes.username = 'John Doe';
+        $scope.email = 'john.doe@gmail.com';
+    });
+</script>
+</body>
+</html>

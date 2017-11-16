@@ -1,0 +1,33 @@
+<fieldset id="login-fieldset" ng-controller="loginController">
+	<legend>Member Login</legend>
+	<span class="error-msg" id="total-msg"></span>
+	<form id="login-form" name="login-form" action="#" class="form-horizontal col-sm-offset-3">
+		<div class="form-group">
+			<label class="control-label col-sm-2">Tài khoản</label>
+			<div class="col-sm-5">
+				<input type="text" name="usernamelogin" 
+					class="form-control short-input" 
+					ng-model="loginData.data.attributes.usernamelogin">
+				<span class="error-msg"></span>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2">Mật khẩu</label>
+			<div class="col-sm-5">
+				<input type="password" name="passwordlogin" 
+					class="form-control short-input" 
+					ng-model="loginData.data.attributes.passwordlogin">
+				<span class="error-msg"></span>
+			</div>
+		</div>			
+		<div class="form-group nghichchoicainut">
+			<div class="col-sm-offset-3">
+            	<button type="submit" class="btn btn-primary bnt-lg" class="form-control" ng-click="handleLogin()">Submit</button>
+            	<button type="reset" class="btn btn-default bnt-lg" >Reset</button>
+          	</div>
+			<!-- <input type="button" name="submit" value="Đăng nhập" 
+				class="form-control" ng-click="handleLogin()">
+			<input type="reset" name="reset" value="Làm lại" class="form-control"> -->
+		</div>		
+	</form>
+</fieldset>
